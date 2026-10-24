@@ -409,15 +409,15 @@ export function Settings() {
 
                   <div className="pt-6 border-t border-gray-100 dark:border-gray-800 text-center text-sm text-gray-500 dark:text-gray-400">
                     <img 
-                      src="/KAVYA PROFILE PIC.jpeg" 
-                      alt="Kavya" 
+                      src="/keerthana-profile.jpg" 
+                      alt="Keerthana" 
                       className="w-16 h-16 rounded-full object-cover ring-4 ring-primary-500/20 mx-auto mb-3"
                     />
-                    <p className="font-medium text-primary-600 dark:text-primary-400">Created by Kavya</p>
+                    <p className="font-medium text-primary-600 dark:text-primary-400">Created by Keerthana</p>
                     <p className="font-medium text-accent-600 dark:text-accent-400 mt-1">Deployed by Gowtham</p>
                     <p className="mt-2 text-gray-500 dark:text-gray-400">College: Kumaraguru College of Technology</p>
                     <div className="mt-3 flex flex-col sm:flex-row items-center justify-center gap-3 text-sm">
-                      <a href="mailto:kavyavelmurugan05@gmail.com" className="text-primary-600 dark:text-primary-400 hover:underline flex items-center gap-1">
+                      <a href="mailto:keerselva595@gmail.com" className="text-primary-600 dark:text-primary-400 hover:underline flex items-center gap-1">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2z"/></svg>
                         kavyavelmurugan05@gmail.com
                       </a>
