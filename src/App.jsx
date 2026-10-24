@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ThemeProvider } from './context/ThemeContext';
@@ -72,7 +72,7 @@ function App() {
     <ThemeProvider>
       <AuthProvider>
         <StudyProvider>
-          <BrowserRouter>
+          <HashRouter>
             <Toaster
               position="top-right"
               toastOptions={{
@@ -119,7 +119,7 @@ function App() {
               {/* Catch-all */}
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
-          </BrowserRouter>
+          </HashRouter>
         </StudyProvider>
       </AuthProvider>
     </ThemeProvider>
