@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import { X, BookOpen, Bot, Target, HelpCircle, Settings, LogOut, Sun, Moon } from 'lucide-react';
+import { X, BookOpen, Bot, Target, HelpCircle, Settings, Sun, Moon } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '../../lib/utils';
 import { Avatar } from '../ui/Avatar';
@@ -16,16 +16,16 @@ const navigation = [
   { name: 'Study Plans', href: '/plans', icon: Target },
 ];
 
-export function MobileSidebar() {
+export function MobileSidebar({ open, onClose }) {
   const location = useLocation();
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
   const { theme, toggleTheme } = useTheme();
 
   const isActive = (href) => location.pathname === href;
 
   return (
-    <Transition.Root show={true} as={Fragment}>
-      <Dialog as="div" className="relative z-50 lg:hidden" onClose={() => {}}>
+    <Transition.Root show={open} as={Fragment}>
+      <Dialog as="div" className="relative z-50 lg:hidden" onClose={onClose}>
         <Transition.Child
           as={Fragment}
           enter="ease-in-out duration-300"
@@ -55,7 +55,7 @@ export function MobileSidebar() {
                   <span>StudyAI</span>
                 </Link>
                 <button
-                  onClick={() => {}}
+                  onClick={onClose}
                   className="p-2 rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
                 >
                   <X className="w-6 h-6" />
