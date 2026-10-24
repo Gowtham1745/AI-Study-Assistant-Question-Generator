@@ -284,8 +284,14 @@ export function LandingPage() {
           </div>
           <div className="pt-8 border-t border-gray-100 dark:border-gray-800">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left">
-              <img 
-                <div className="w-20 h-20 rounded-full bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300 ring-4 ring-primary-500/20 flex items-center justify-center text-2xl font-bold" aria-label="Kavya profile placeholder">K</div>
+              <img
+                src={`${import.meta.env.BASE_URL}KAVYA%20PROFILE%20PIC.jpeg`}
+                alt="Kavya profile"
+                className="w-20 h-20 rounded-full object-cover ring-4 ring-primary-500/20"
+                onError={(event) => {
+                  event.currentTarget.style.display = 'none';
+                }}
+              />
               <div>
                 <p>© 2024 StudyAI. All rights reserved.</p>
                 <p className="mt-2">
