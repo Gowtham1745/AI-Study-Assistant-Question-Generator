@@ -67,9 +67,13 @@ export function Navbar({ onMenuClick }) {
             })}
           </div>
 
-          <div className="hidden xl:block text-right leading-tight"><p className="text-[11px] text-gray-500 dark:text-gray-400">Created by <span className="font-semibold text-gray-800 dark:text-gray-100">Kavya</span></p><p className="mt-1 text-[11px] text-gray-500 dark:text-gray-400">Developer <span className="font-semibold text-primary-700 dark:text-primary-300">Gowtham A</span></p></div>
+          {/* Creator credits stay visible in the top bar on desktop and mobile */}
+          <div className="ml-auto shrink-0 rounded-lg border border-gray-200 bg-white/80 px-2 py-1 text-right leading-tight dark:border-gray-700 dark:bg-gray-900/80 sm:px-3">
+            <p className="whitespace-nowrap text-[9px] text-gray-500 dark:text-gray-400 sm:text-[11px]">Creator: <span className="font-bold text-gray-900 dark:text-white">Kavya</span></p>
+            <p className="mt-0.5 whitespace-nowrap text-[9px] text-primary-700 dark:text-primary-300 sm:text-[11px]">Developer: <span className="font-bold">Gowtham A</span></p>
+          </div>
           {/* Right Side Actions */}
-          <div className="flex items-center gap-3">
+          <div className="flex shrink-0 items-center gap-1 sm:gap-3">
             {/* Theme Toggle */}
             <Button
               variant="ghost"
