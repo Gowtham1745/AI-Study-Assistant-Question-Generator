@@ -54,7 +54,14 @@ function NameGate() {
 }
 
 function MainLayout() {
-  return <div className="min-h-screen bg-gray-50 dark:bg-gray-950"><Navbar /><MobileSidebar /><main className="pb-16"><Outlet /></main></div>;
+  const [mobileOpen, setMobileOpen] = useState(false);
+  return (
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
+      <Navbar onMenuClick={() => setMobileOpen(true)} />
+      <MobileSidebar open={mobileOpen} onClose={() => setMobileOpen(false)} />
+      <main className="pb-16"><Outlet /></main>
+    </div>
+  );
 }
 
 function App() {
