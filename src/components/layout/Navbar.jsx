@@ -67,6 +67,7 @@ export function Navbar({ onMenuClick }) {
             })}
           </div>
 
+          <div className="hidden xl:block text-right leading-tight"><p className="text-[11px] text-gray-500 dark:text-gray-400">Created by <span className="font-semibold text-gray-800 dark:text-gray-100">Kavya</span></p><p className="mt-1 text-[11px] text-gray-500 dark:text-gray-400">Developer <span className="font-semibold text-primary-700 dark:text-primary-300">Gowtham A</span></p></div>
           {/* Right Side Actions */}
           <div className="flex items-center gap-3">
             {/* Theme Toggle */}
