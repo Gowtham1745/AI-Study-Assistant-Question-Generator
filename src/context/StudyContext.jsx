@@ -11,47 +11,54 @@ export function StudyProvider({ children }) {
   const [studyPlans, setStudyPlans] = useState([]);
   const [chatHistory, setChatHistory] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [hydratedUserId, setHydratedUserId] = useState(null);
 
-  // Load data from localStorage in demo mode
+  // Load this browser's study data before enabling writes, so initial empty state
+  // never overwrites saved data while the profile is being restored.
   useEffect(() => {
-    if (DEMO_MODE && user) {
-      const storedFlashcards = localStorage.getItem(`flashcards_${user.uid}`);
-      const storedQuizzes = localStorage.getItem(`quizzes_${user.uid}`);
-      const storedPlans = localStorage.getItem(`studyPlans_${user.uid}`);
-      const storedChat = localStorage.getItem(`chatHistory_${user.uid}`);
-
-      if (storedFlashcards) setFlashcards(JSON.parse(storedFlashcards));
-      if (storedQuizzes) setQuizzes(JSON.parse(storedQuizzes));
-      if (storedPlans) setStudyPlans(JSON.parse(storedPlans));
-      if (storedChat) setChatHistory(JSON.parse(storedChat));
+    setLoading(true);
+    setHydratedUserId(null);
+    if (!user?.uid) {
+      setFlashcards([]);
+      setQuizzes([]);
+      setStudyPlans([]);
+      setChatHistory([]);
+      setLoading(false);
+      return;
     }
+
+    const read = (key) => {
+      try {
+        const value = localStorage.getItem(`${key}_${user.uid}`);
+        return value ? JSON.parse(value) : [];
+      } catch {
+        return [];
+      }
+    };
+
+    setFlashcards(read('flashcards'));
+    setQuizzes(read('quizzes'));
+    setStudyPlans(read('studyPlans'));
+    setChatHistory(read('chatHistory'));
+    setHydratedUserId(user.uid);
     setLoading(false);
-  }, [user]);
-
-  // Save data to localStorage
-  useEffect(() => {
-    if (DEMO_MODE && user) {
-      localStorage.setItem(`flashcards_${user.uid}`, JSON.stringify(flashcards));
-    }
-  }, [flashcards, user]);
+  }, [user?.uid]);
 
   useEffect(() => {
-    if (DEMO_MODE && user) {
-      localStorage.setItem(`quizzes_${user.uid}`, JSON.stringify(quizzes));
-    }
-  }, [quizzes, user]);
+    if (user?.uid && hydratedUserId === user.uid) localStorage.setItem(`flashcards_${user.uid}`, JSON.stringify(flashcards));
+  }, [flashcards, user?.uid, hydratedUserId]);
 
   useEffect(() => {
-    if (DEMO_MODE && user) {
-      localStorage.setItem(`studyPlans_${user.uid}`, JSON.stringify(studyPlans));
-    }
-  }, [studyPlans, user]);
+    if (user?.uid && hydratedUserId === user.uid) localStorage.setItem(`quizzes_${user.uid}`, JSON.stringify(quizzes));
+  }, [quizzes, user?.uid, hydratedUserId]);
 
   useEffect(() => {
-    if (DEMO_MODE && user) {
-      localStorage.setItem(`chatHistory_${user.uid}`, JSON.stringify(chatHistory));
-    }
-  }, [chatHistory, user]);
+    if (user?.uid && hydratedUserId === user.uid) localStorage.setItem(`studyPlans_${user.uid}`, JSON.stringify(studyPlans));
+  }, [studyPlans, user?.uid, hydratedUserId]);
+
+  useEffect(() => {
+    if (user?.uid && hydratedUserId === user.uid) localStorage.setItem(`chatHistory_${user.uid}`, JSON.stringify(chatHistory));
+  }, [chatHistory, user?.uid, hydratedUserId]);
 
   // Flashcard functions
   const addFlashcard = useCallback((flashcard) => {
