@@ -6,7 +6,6 @@ import {
   Sun, 
   Moon, 
   User, 
-  LogOut, 
   Settings,
   BookOpen,
   Bot,
@@ -30,7 +29,7 @@ const navigation = [
 
 export function Navbar() {
   const location = useLocation();
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
   const { theme, toggleTheme } = useTheme();
 
   const isActive = (href) => location.pathname === href;
@@ -106,7 +105,6 @@ export function Navbar() {
                 <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right rounded-xl bg-white dark:bg-gray-900 shadow-lg ring-1 ring-gray-100 dark:ring-gray-800 focus:outline-none p-1">
                   <div className="px-3 py-2 border-b border-gray-100 dark:border-gray-800">
                     <p className="text-sm font-medium text-gray-900 dark:text-gray-100">{user?.displayName}</p>
-                    <p className="text-xs text-gray-500 dark:text-gray-400 truncate">{user?.email}</p>
                   </div>
                   
                   <Menu.Item>
@@ -124,20 +122,6 @@ export function Navbar() {
                     )}
                   </Menu.Item>
 
-                  <Menu.Item>
-                    {({ active }) => (
-                      <button
-                        onClick={() => logout()}
-                        className={cn(
-                          'flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-sm text-red-600 transition-colors',
-                          active ? 'bg-red-50 dark:bg-red-900/20' : ''
-                        )}
-                      >
-                        <LogOut className="w-5 h-5" />
-                        Sign out
-                      </button>
-                    )}
-                  </Menu.Item>
                 </Menu.Items>
               </Transition>
             </Menu>
