@@ -288,9 +288,7 @@ export function LandingPage() {
                 src={`${import.meta.env.BASE_URL}KAVYA%20PROFILE%20PIC.jpeg`}
                 alt="Kavya profile"
                 className="w-20 h-20 rounded-full object-cover ring-4 ring-primary-500/20"
-                onError={(event) => {
-                  event.currentTarget.style.display = 'none';
-                }}
+                onError={(event) => { event.currentTarget.style.display = 'none'; }}
               />
               <div>
                 <p>© 2024 StudyAI. All rights reserved.</p>
