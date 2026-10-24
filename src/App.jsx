@@ -36,7 +36,7 @@ function NameGate() {
   if (user?.displayName) return <Navigate to="/dashboard" replace />;
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 py-12 bg-gradient-to-br from-gray-50 to-white dark:from-gray-950 dark:to-gray-900">
+    <div className="relative min-h-screen flex items-center justify-center px-4 py-12 bg-gradient-to-br from-gray-50 to-white dark:from-gray-950 dark:to-gray-900"><div className="absolute right-4 top-4 text-right text-xs sm:right-8 sm:top-6 sm:text-sm"><p className="text-gray-500 dark:text-gray-400">Created by <strong className="text-gray-900 dark:text-white">Kavya</strong></p><p className="mt-1 text-gray-500 dark:text-gray-400">Developer <strong className="text-primary-700 dark:text-primary-300">Gowtham A</strong></p><p className="mt-1 hidden text-gray-500 dark:text-gray-400 sm:block">Kumaraguru College of Technology</p></div>
       <div className="w-full max-w-lg text-center">
         <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary-100 text-primary-600 dark:bg-primary-900/30 dark:text-primary-300"><BookOpen className="h-9 w-9" /></div>
         <p className="mb-3 text-lg font-bold gradient-text">StudyAI</p>
@@ -72,8 +72,9 @@ function App() {
           <HashRouter>
             <Toaster position="top-right" toastOptions={{ duration: 3500 }} />
             <Routes>
-              <Route path="/" element={<NameGate />} />
-              <Route path="/home" element={<LandingPage />} />
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/start" element={<NameGate />} />
+              <Route path="/home" element={<Navigate to="/" replace />} />
               <Route element={<MainLayout />}>
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/tutor" element={<AITutor />} />
