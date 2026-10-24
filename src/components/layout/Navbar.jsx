@@ -68,10 +68,7 @@ export function Navbar({ onMenuClick }) {
           </div>
 
           {/* Creator credits stay visible in the top bar on desktop and mobile */}
-          <div className="ml-auto flex shrink-0 items-center gap-1.5 rounded-xl border border-indigo-200 bg-white/90 px-1.5 py-1 shadow-sm dark:border-indigo-800 dark:bg-gray-900/90 sm:gap-2 sm:px-3 sm:py-1.5">
-            <img src="/AI-Study-Assistant-Question-Generator/KAVYA%20PROFILE%20PIC.jpeg" alt="Kavya, creator" className="h-8 w-8 rounded-full border-2 border-indigo-500 object-cover sm:h-10 sm:w-10" />
-            <div className="leading-tight"><p className="whitespace-nowrap text-[8px] font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-300 sm:text-[9px]">Project Creator</p><p className="whitespace-nowrap text-xs font-extrabold text-gray-950 dark:text-white sm:text-sm">Kavya</p><p className="whitespace-nowrap text-[8px] text-gray-600 dark:text-gray-300 sm:text-[10px]">Developer: <strong>Gowtham A</strong></p></div>
-          </div>
+          <div className="ml-auto flex shrink-0 items-center gap-1 rounded-xl border border-indigo-200 bg-white/90 px-1.5 py-1 shadow-sm dark:border-indigo-800 dark:bg-gray-900/90 sm:gap-2 sm:px-3 sm:py-1.5"><div className="flex items-center gap-1"><img src="/AI-Study-Assistant-Question-Generator/KAVYA%20PROFILE%20PIC.jpeg" alt="Kavya, creator" className="h-7 w-7 rounded-full border-2 border-indigo-500 object-cover sm:h-9 sm:w-9" /><img src="/AI-Study-Assistant-Question-Generator/GOWTHAM_PROFILE.jpg" alt="Gowtham A, developer" className="-ml-2 h-7 w-7 rounded-full border-2 border-violet-500 object-cover sm:h-9 sm:w-9" /></div><div className="leading-tight"><p className="whitespace-nowrap text-[8px] font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-300 sm:text-[9px]">Creator · Developer</p><p className="whitespace-nowrap text-[10px] font-extrabold text-gray-950 dark:text-white sm:text-xs">Kavya · Gowtham A</p></div></div>
           {/* Right Side Actions */}
           <div className="flex shrink-0 items-center gap-1 sm:gap-3">
             {/* Theme Toggle */}
