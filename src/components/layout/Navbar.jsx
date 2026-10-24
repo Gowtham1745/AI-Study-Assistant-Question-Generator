@@ -27,7 +27,7 @@ const navigation = [
   { name: 'Study Plans', href: '/plans', icon: Target },
 ];
 
-export function Navbar() {
+export function Navbar({ onMenuClick }) {
   const location = useLocation();
   const { user } = useAuth();
   const { theme, toggleTheme } = useTheme();
@@ -130,6 +130,7 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
+              onClick={onMenuClick}
               className="p-2 rounded-lg text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
               aria-label="Open menu"
             >
