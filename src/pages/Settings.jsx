@@ -14,6 +14,7 @@ import {
   Eye,
   EyeOff,
   CheckCircle,
+  HelpCircle,
   Save,
   Loader2
 } from 'lucide-react';
