@@ -68,9 +68,9 @@ export function Navbar({ onMenuClick }) {
           </div>
 
           {/* Creator credits stay visible in the top bar on desktop and mobile */}
-          <div className="ml-auto shrink-0 rounded-lg border border-gray-200 bg-white/80 px-2 py-1 text-right leading-tight dark:border-gray-700 dark:bg-gray-900/80 sm:px-3">
-            <p className="whitespace-nowrap text-[9px] text-gray-500 dark:text-gray-400 sm:text-[11px]">Creator: <span className="font-bold text-gray-900 dark:text-white">Kavya</span></p>
-            <p className="mt-0.5 whitespace-nowrap text-[9px] text-primary-700 dark:text-primary-300 sm:text-[11px]">Developer: <span className="font-bold">Gowtham A</span></p>
+          <div className="ml-auto flex shrink-0 items-center gap-1.5 rounded-xl border border-indigo-200 bg-white/90 px-1.5 py-1 shadow-sm dark:border-indigo-800 dark:bg-gray-900/90 sm:gap-2 sm:px-3 sm:py-1.5">
+            <img src="/AI-Study-Assistant-Question-Generator/KAVYA%20PROFILE%20PIC.jpeg" alt="Kavya, creator" className="h-8 w-8 rounded-full border-2 border-indigo-500 object-cover sm:h-10 sm:w-10" />
+            <div className="leading-tight"><p className="whitespace-nowrap text-[8px] font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-300 sm:text-[9px]">Project Creator</p><p className="whitespace-nowrap text-xs font-extrabold text-gray-950 dark:text-white sm:text-sm">Kavya</p><p className="whitespace-nowrap text-[8px] text-gray-600 dark:text-gray-300 sm:text-[10px]">Developer: <strong>Gowtham A</strong></p></div>
           </div>
           {/* Right Side Actions */}
           <div className="flex shrink-0 items-center gap-1 sm:gap-3">
